@@ -18,6 +18,7 @@
 #define LCD_DEBUG(fmt)  printk(fmt)
 #endif
 
+extern LCM_DRIVER TM_otm8012_fwvga_cmd_lcm_drv;
 extern LCM_DRIVER otm1282a_hd720_dsi_vdo_60hz_lcm_drv;
 extern LCM_DRIVER otm1282a_hd720_dsi_vdo_lcm_drv;
 extern LCM_DRIVER vvx10f008b00_wuxga_dsi_vdo_lcm_drv;
@@ -248,6 +249,9 @@ extern LCM_DRIVER ili9881c_dsi_vdo_3lanes_dj_lcm_drv;
 // Added by zx for s5250 end
 LCM_DRIVER* lcm_driver_list[] =
 {
+#if defined(TM_OTM8012_FWVGA_CMD)
+	&TM_otm8012_fwvga_cmd_lcm_drv,
+#endif
 // Added by zx for s5250 start
 #if defined(ILI9881C_DSI_VDO_3LANES_TCL)
 	&ili9881c_dsi_vdo_3lanes_tcl_lcm_drv,
