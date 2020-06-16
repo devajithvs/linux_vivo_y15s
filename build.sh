@@ -8,5 +8,5 @@ export ARCH=arm && export SUBARCH=arm
 #make clean
 #make mrproper
 
-make -C $PWD O=$PWD/out ARCH=arm goyave3g_defconfig
+make -C $PWD O=$PWD/out ARCH=arm s5030_defconfig
 make -j$(nproc) -C $PWD O=$PWD/out ARCH=arm
